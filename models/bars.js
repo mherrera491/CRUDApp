@@ -4,7 +4,7 @@ const barSchema = new mongoose.Schema({
     name: {type: String, required: true},
     address: {type: String, required: true},
     hours: {type: String, required: true},
-    hasHappyHour: {type: checkbox, required: true},
+    hasHappyHour: {type: Boolean, required: true},
     happyHourTime: {type: String, required: true},
     description: String,
     img: String
