@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Bar = require("../models/bars.js");
+const barSeed = require("./models/seed.js")
 
 // ROUTES (I.N.D.U.C.E.S.)
 
@@ -24,5 +25,7 @@ router.get("", (req, res) => {
 // EDIT
 
 // SHOW
+
+
 
 module.exports = router;
