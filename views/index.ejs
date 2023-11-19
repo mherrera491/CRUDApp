@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Happy Hour LV</h1>
+    <ul>
+        <% for(let i = 0; i < bars.length; i++) { %>
+            <li>
+                <%=bars[i].name%>
+            </li>
+        <% } %>
+    </ul>
 </body>
 </html>

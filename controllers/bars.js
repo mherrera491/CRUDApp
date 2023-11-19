@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Bar = require("../models/bars.js");
-const barSeed = require("./models/seed.js")
+const barSeed = require("../models/barseed.js")
 
 // ROUTES (I.N.D.U.C.E.S.)
 
@@ -26,6 +26,9 @@ router.get("", (req, res) => {
 
 // SHOW
 
-
+// Bar.create(barSeed, (err, data) => {
+//     if (err) console.log(err.message);
+//     console.log("added bar data")
+// })
 
 module.exports = router;

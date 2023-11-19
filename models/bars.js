@@ -17,7 +17,7 @@ const barSchema = new mongoose.Schema({
   happyHourTime: { type: String, required: true },
   description: String,
   img: String,
-});
+}, {timestamps: true});
 
 const Bar = mongoose.model("Bar", barSchema);
 
