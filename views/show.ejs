@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Hour LV</title>
+</head>
+<body>
+    <h1>Happy Hour LV</h1>
+    <h2><%=bar.name%></h2>
+    <img src="<%=bar.img%>" alt="<%=bar.name%>">
+    <div>
+        <p><strong>Address:</strong></p>
+        <p><%=bar.address[0].street%>, <%=bar.address[0].city%>, <%=bar.address[0].state%> <%=bar.address[0].zipCode%></p>
+        <p><strong>Happy Hour:</strong> <%=bar.hasHappyHour ? 'Yes' : 'No'%></p>
+        <p><strong>Happy Hour Time:</strong> <%=bar.happyHourTime%></p>
+        <p><strong>Description:</strong> <%=bar.description%></p>
+    </div>
+</body>
+</html>

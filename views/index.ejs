@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Hour LV</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Happy Hour LV</h1>
+    <h2>Bars</h2>
     <ul>
-        <% for(let i = 0; i < bars.length; i++) { %>
-            <li>
-                <%=bars[i].name%>
-            </li>
-        <% } %>
+      <% for(let i = 0; i < bars.length; i++) { %>
+      <li>
+        <a href="/bars/<%=bars[i].id%>"><%=bars[i].name%></a>
+      </li>
+      <% } %>
     </ul>
-</body>
+  </body>
 </html>
