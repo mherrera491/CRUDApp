@@ -1,12 +1,12 @@
 const express = require("express");
-const router = express.Router();
+const bars = express.Router();
 const Bar = require("../models/bars.js");
 const barSeed = require("../models/barseed.js");
 
 // ROUTES (I.N.D.U.C.E.S.)
 
 // INDEX
-router.get("", (req, res) => {
+bars.get("", (req, res) => {
   Bar.find({}, (error, allBars) => {
     res.render("index.ejs", {
       bars: allBars,
@@ -15,17 +15,36 @@ router.get("", (req, res) => {
 });
 
 // NEW
+bars.get("/new", (req, res) => {
+  res.render("new.ejs");
+});
 
 // DELETE
 
 // UPDATE
 
 // CREATE
+bars.post("/", (req, res) => {
+  if (req.body.hasHappyHour === "on") {
+    req.body.hasHappyHour = true;
+  } else {
+    req.body.hasHappyHour = false;
+  }
+
+  Bar.create(req.body, (error, createdBar) => {
+    if (error) {
+      console.log(error);
+      res.send(error);
+    } else {
+      res.redirect("/bars");
+    }
+  });
+});
 
 // EDIT
 
 // SHOW
-router.get("/:id", (req, res) => {
+bars.get("/:id", (req, res) => {
   Bar.findById(req.params.id, (err, foundBar) => {
     res.render("show.ejs", {
       bar: foundBar,
@@ -38,4 +57,4 @@ router.get("/:id", (req, res) => {
 //     console.log("added bar data")
 // })
 
-module.exports = router;
+module.exports = bars;
