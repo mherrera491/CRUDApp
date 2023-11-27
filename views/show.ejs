@@ -11,9 +11,9 @@
     <img src="<%=bar.img%>" alt="<%=bar.name%>" />
     <div>
       <p>
-        <strong>Address:</strong> <%=bar.address[0].street%>,
-        <%=bar.address[0].city%>, <%=bar.address[0].state%>
-        <%=bar.address[0].zipCode%>
+        <strong>Address:</strong> <%=bar.address.street%>,
+        <%=bar.address.city%>, <%=bar.address.state%>
+        <%=bar.address.zipCode%>
       </p>
       <p><strong>Happy Hour:</strong> <%=bar.hasHappyHour ? 'Yes' : 'No'%></p>
       <p><strong>Happy Hour Time:</strong> <%=bar.happyHourTime%></p>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Hour LV</title>
+</head>
+<body>
+    <h1>Happy Hour LV</h1>
+    <h2>Edit Location Details</h2>
+    <form action="/bars/<%=bar.id%>?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="<%=bar.name%>"><br>
+        Street: <input type="text" name="street" value="<%=bar.address.street%>"><br>
+        City: <input type="text" name="city" value="<%=bar.address.city%>"><br>
+        State: <input type="text" name="state" value="<%=bar.address.state%>"><br>
+        Zip Code: <input type="number" name="zipCode" value="<%=bar.address.zipCode%>"><br>
+        Happy Hour: <input type="checkbox" name="hasHappyHour" 
+        <% if(bar.hasHappyHour === true){ %>
+            checked
+        <% } %>
+        />
+        <br>
+        Happy Hour Time: <input type="text" name="happyHourTime" value="<%=bar.happyHourTime%>"><br>
+        Description: <input type="text" name="description" value="<%=bar.description%>"><br>
+        Images: <input type="text" name="img" value="<%=bar.img%>">
+        <input type="submit" name="" value="Submit Changes">
+    </form>
+</body>
+</html>
