@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Happy Hour LV</title>
-</head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h1>Happy Hour LV</h1>
     <h2>Edit Location Details</h2>
     <form action="/bars/<%=bar.id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%=bar.name%>"><br>

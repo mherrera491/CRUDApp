@@ -45,7 +45,7 @@ bars = [
     happyHourTime: "5-8PM Tue-Sat",
     description:
       "An intimate cocktail room and speakeasy in the heart of Las Vegas: equal parts loungy, upscale cocktail vibe, and clandestine, low-brow New York City vibes. Half-off wells, call spirits, beer, wine, and punch bowls",
-    img: "https://i.imgur.com/RfNqLsc.png",
+    img: "https://i.imgur.com/aaty1MU.jpg",
   },
 ];
 

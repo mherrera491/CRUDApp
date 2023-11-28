@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(172, 156, 145);
+}
+
+.card {
+    height: 100%;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+#app-title {
+    text-align: center;
+}
