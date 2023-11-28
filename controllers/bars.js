@@ -3,6 +3,14 @@ const bars = express.Router();
 const Bar = require("../models/bars.js");
 const barSeed = require("../models/barseed.js");
 
+const isAuthenticated = (req, res, next) => {
+  if(req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
+
 // ROUTES (I.N.D.U.C.E.S.)
 
 // INDEX
@@ -10,24 +18,27 @@ bars.get("", (req, res) => {
   Bar.find({}, (error, allBars) => {
     res.render("index.ejs", {
       bars: allBars,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 // NEW
-bars.get("/new", (req, res) => {
-  res.render("new.ejs");
+bars.get("/new", isAuthenticated, (req, res) => {
+  res.render("new.ejs", {
+    currentUser: req.session.currentUser
+  });
 });
 
 // DELETE
-bars.delete("/:id", (req, res) => {
+bars.delete("/:id", isAuthenticated, (req, res) => {
   Bar.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/bars");
   });
 });
 
 // UPDATE
-bars.put("/:id", (req, res) => {
+bars.put("/:id", isAuthenticated, (req, res) => {
   if (req.body.hasHappyHour === "on") {
     req.body.hasHappyHour = true;
   } else {
@@ -44,7 +55,7 @@ bars.put("/:id", (req, res) => {
 });
 
 // CREATE
-bars.post("/", (req, res) => {
+bars.post("/", isAuthenticated, (req, res) => {
   if (req.body.hasHappyHour === "on") {
     req.body.hasHappyHour = true;
   } else {
@@ -77,19 +88,21 @@ bars.post("/", (req, res) => {
 });
 
 // EDIT
-bars.get("/:id/edit", (req, res) => {
+bars.get("/:id/edit", isAuthenticated, (req, res) => {
   Bar.findById(req.params.id, (err, foundBar) => {
     res.render("edit.ejs", {
       bar: foundBar,
+      currentUser: req.session.currentUser
     });
   });
 });
 
 // SHOW
-bars.get("/:id", (req, res) => {
+bars.get("/:id", isAuthenticated, (req, res) => {
   Bar.findById(req.params.id, (err, foundBar) => {
     res.render("show.ejs", {
       bar: foundBar,
+      currentUser: req.session.currentUser
     });
   });
 });
