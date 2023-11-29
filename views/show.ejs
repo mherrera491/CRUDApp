@@ -2,19 +2,26 @@
 <html lang="en">
   <body>
     <%- include('./partials/nav.ejs') %>
-    <h2><%=bar.name%></h2>
-    <img class="img-responsive" src="<%=bar.img%>" alt="<%=bar.name%>"/>
-    <div>
-      <address>
-        <strong>Address:</strong><br>
-        <%=bar.address.street%><br>
-        <%=bar.address.city%>, <%=bar.address.state%> <%=bar.address.zipCode%>
-      </address>
-      <p><strong>Happy Hour:</strong> <%=bar.hasHappyHour ? 'Yes' : 'No'%></p>
-      <p><strong>Happy Hour Time:</strong> <%=bar.happyHourTime%></p>
-      <p><strong>Description:</strong><br>
-        <%=bar.description%>
-      </p>
+    <div class="container text-center">
+      <h2><%=bar.name%></h2>
+      <img
+        class="img-fluid bar-image"
+        src="<%=bar.img%>"
+        alt="<%=bar.name%>"
+      />
+      <div class="container card bar-info">
+        <address>
+          <strong>Address:</strong><br />
+          <%=bar.address.street%><br />
+          <%=bar.address.city%>, <%=bar.address.state%> <%=bar.address.zipCode%>
+        </address>
+        <p><strong>Happy Hour:</strong> <%=bar.hasHappyHour ? 'Yes' : 'No'%></p>
+        <p><strong>Happy Hour Time:</strong> <%=bar.happyHourTime%></p>
+        <p>
+          <strong>Description:</strong><br />
+          <%=bar.description%>
+        </p>
+      </div>
     </div>
   </body>
 </html>

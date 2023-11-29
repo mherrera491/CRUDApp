@@ -18,13 +18,15 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <ul class="navbar-nav">
-            <li class="list-inline-item"><a href="/bars">Bars List</a></li>
+            <li class="list-inline-item"><a href="/bars">BARS</a></li>
             <li class="list-inline-item">
-              <a href="/bars/new">Create New Location</a>
+              <a href="/bars/new">ADD NEW LOCATION</a>
             </li>
+            </ul>
+            <ul class="navbar-nav ms-auto">
             <% if (currentUser) { %>
             <li class="list-inline-item">
-              Welcome <%= currentUser.username %>
+              WELOME <%= currentUser.username.toUpperCase() %>
             </li>
             <li class="list-inline-item">
               <form action="/sessions?_method=DELETE" method="POST">
@@ -32,8 +34,8 @@
               </form>
             </li>
             <% } else { %>
-            <li class="list-inline-item"><a href="/users/new">Sign Up</a></li>
-            <li class="list-inline-item"><a href="/sessions/new">Log In</a></li>
+            <li class="list-inline-item"><a href="/users/new">REGISTER</a></li>
+            <li class="list-inline-item"><a href="/sessions/new">SIGN IN</a></li>
             <% } %>
           </ul>
         </div>
