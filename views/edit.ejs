@@ -2,44 +2,57 @@
 <html lang="en">
   <body>
     <%- include('./partials/nav.ejs') %>
-    <h2>Edit Location Details</h2>
-    <div class="form-group">
-      <form action="/bars/<%=bar.id%>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%=bar.name%>" /><br />
-        Street:
-        <input
-          type="text"
-          name="street"
-          value="<%=bar.address.street%>"
-        /><br />
-        City:
-        <input type="text" name="city" value="<%=bar.address.city%>" /><br />
-        State:
-        <input type="text" name="state" value="<%=bar.address.state%>" /><br />
-        Zip Code:
-        <input
-          type="number"
-          name="zipCode"
-          value="<%=bar.address.zipCode%>"
-        /><br />
-        Happy Hour: <input type="checkbox" name="hasHappyHour" <%
-        if(bar.hasHappyHour === true){ %> checked <% } %> />
-        <br />
-        Happy Hour Time:
-        <input
-          type="text"
-          name="happyHourTime"
-          value="<%=bar.happyHourTime%>"
-        /><br />
-        Description:
-        <input
-          type="text"
-          name="description"
-          value="<%=bar.description%>"
-        /><br />
-        Images: <input type="text" name="img" value="<%=bar.img%>" />
-        <input type="submit" name="" value="Submit Changes" />
-      </form>
+    
+<div class="container new-loc-text">
+  <h2 class="mt-2">Edit Location Details</h2>
+  <form action="/bars/<%=bar.id%>?_method=PUT" method="POST">
+    <div class="form-group mb-3">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" value="<%=bar.name%>" />
     </div>
+
+    <div class="form-group mb-3">
+      <label for="street">Street:</label>
+      <input type="text" class="form-control" id="street" name="street" value="<%=bar.address.street%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="city">City:</label>
+      <input type="text" class="form-control" id="city" name="city" value="<%=bar.address.city%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="state">State:</label>
+      <input type="text" class="form-control" id="state" name="state" value="<%=bar.address.state%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="zipCode">Zip Code:</label>
+      <input type="number" class="form-control" id="zipCode" name="zipCode" value="<%=bar.address.zipCode%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="hasHappyHour">Happy Hour:</label>
+      <input type="checkbox" class="form-check-input" id="hasHappyHour" name="hasHappyHour" <% if(bar.hasHappyHour === true){ %> checked <% } %> />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="happyHourTime">Happy Hour Time:</label>
+      <input type="text" class="form-control" id="happyHourTime" name="happyHourTime" value="<%=bar.happyHourTime%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" id="description" name="description" value="<%=bar.description%>" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="img">Images:</label>
+      <input type="text" class="form-control" id="img" name="img" value="<%=bar.img%>" />
+    </div>
+
+    <button type="submit" class="btn btn-danger mb-3">Submit Changes</button>
+  </form>
+</div>
   </body>
 </html>
