@@ -12,7 +12,17 @@ const isAuthenticated = (req, res, next) => {
 }
 
 // ROUTES (I.N.D.U.C.E.S.)
-
+// bars.get("/seed", (req, res) => {
+//   Bar.create(barSeed, (err, data) => {
+//     if (err) {
+//       console.log(err.message);
+//       res.send(err.message);
+//     } else {
+//       console.log("added bar data");
+//       res.send("Seed data added successfully");
+//     }
+//   });
+// });
 // INDEX
 bars.get("", (req, res) => {
   Bar.find({}, (error, allBars) => {
@@ -123,9 +133,6 @@ bars.get("/:id", isAuthenticated, (req, res) => {
   });
 });
 
-// Bar.create(barSeed, (err, data) => {
-//     if (err) console.log(err.message);
-//     console.log("added bar data")
-// })
+
 
 module.exports = bars;

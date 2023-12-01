@@ -1,14 +1,13 @@
 bars = [
   {
     name: "Bin 702",
-    address: [
+    address:
       {
         street: "707 E Fremont St UNIT 1220",
         city: "Las Vegas",
         state: "NV",
         zipCode: 89101,
       },
-    ],
     hasHappyHour: true,
     happyHourTime: "3-6PM Daily",
     description:
@@ -17,14 +16,13 @@ bars = [
   },
   {
     name: "Al's Garage",
-    address: [
+    address: 
       {
         street: "11760 W Charleston Blvd",
         city: "Las Vegas",
         state: "NV",
         zipCode: 89135,
       },
-    ],
     hasHappyHour: true,
     happyHourTime: "10PM-7AM Daily",
     description:
@@ -33,14 +31,13 @@ bars = [
   },
   {
     name: "Downtown Cocktail Room",
-    address: [
+    address:
       {
         street: "111 S Las Vegas Blvd",
         city: "Las Vegas",
         state: "NV",
         zipCode: 89101,
       },
-    ],
     hasHappyHour: true,
     happyHourTime: "5-8PM Tue-Sat",
     description:
