@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const Bar = require("./models/bars.js");
 
 // CONTROLLER VARIABLES
 const barController = require("./controllers/bars.js");
@@ -23,7 +24,7 @@ mongoose.connection.once("open", () => {
 // MIDDLEWARE
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'))
+app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use(
   session({
@@ -39,8 +40,11 @@ app.use("/users", userController);
 app.use("/sessions", sessionsController);
 
 app.get("/", (req, res) => {
-  res.render("home.ejs", {
-    currentUser: req.session.currentUser,
+  Bar.find({}, (error, allBars) => {
+    res.render("home.ejs", {
+      bars: allBars,
+      currentUser: req.session.currentUser
+    });
   });
 });
 

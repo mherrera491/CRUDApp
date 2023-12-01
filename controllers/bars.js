@@ -48,10 +48,12 @@ bars.put("/:id", isAuthenticated, (req, res) => {
 
   const updateData = {
     name: req.body.name,
-    address.street: req.body.street,
-    address.city: req.body.city,
-    address.state: req.body.state,
-    address.zipCode: req.body.zipCode,
+    address: {
+      street: req.body.street,
+      city: req.body.city,
+      state: req.body.state,
+      zipCode: req.body.zipCode,
+    },
     hasHappyHour: req.body.hasHappyHour,
     happyHourTime: req.body.happyHourTime,
     description: req.body.description,

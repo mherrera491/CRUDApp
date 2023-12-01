@@ -1,7 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+  <body>
     <%- include('./partials/nav.ejs') %>
-    <h1>Home Page</h1>
-</body>
+    <div class="container-fluid home-page-content">
+      <p class="home-text mt-4">
+        Welcome to Happy Hour LV, your go-to guide for discovering the best
+        happy hour spots in Las Vegas! 🍹 Whether you're a local looking for new
+        places or a visitor seeking the hottest deals, we've got you covered.
+        Explore a list of bars and venues offering fantastic happy hour
+        deals.<br />
+      </p>
+      <p class="home-text mt-2">
+        But that's not all – Happy Hour LV is a community-driven platform where
+        you can contribute to the experience! Share your favorite happy hour
+        locations, hidden gems, and must-try drink specials with fellow
+        enthusiasts. Cheers! 🥂 #HappyHourLV
+      </p>
+      <% if (currentUser) { %>
+      <a href="/bars" class="home-text explore mt-2 d-block mx-auto"
+        >EXPLORE BARS</a
+      >
+      <% } else { %>
+      <p class="home-text mt-4">
+        <a href="/sessions/new">Sign In</a> or
+        <a href="/users/new">Register</a> to to discover your next go-to happy
+        hour spot!
+      </p>
+      <% } %> <% if (bars.length > 0) { %>
+      <div
+        id="barImageCarousel"
+        class="carousel slide mx-auto mt-4 rounded shadow"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <% bars.forEach((bar, index) => { %> <% const isActive = index === 0 ?
+          'active' : '' %>
+          <div class="carousel-item <%= isActive %>">
+            <img
+              src="<%= bar.img %>"
+              class="d-block w-100 rounded"
+              alt="<%= bar.name %>"
+            />
+          </div>
+          <% }) %>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#barImageCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#barImageCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <% } else { %>
+      <p>No Bars Listed</p>
+      <% } %>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
