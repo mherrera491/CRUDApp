@@ -3,7 +3,7 @@ body {
 }
 
 #barImageCarousel {
-  max-width: 600px;
+  max-width: 800px;
 }
 
 #barImageCarousel img {
@@ -71,6 +71,8 @@ body {
 #app-title {
   text-align: center;
   color: white;
+  font-family: 'Dhurjati', sans-serif;
+  font-size: 50px;
 }
 
 .bar-name{
@@ -106,3 +108,4 @@ body {
 .new-loc-text {
   color: white;
 }
+

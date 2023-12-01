@@ -3,7 +3,7 @@
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="container-fluid home-page-content">
-      <p class="home-text mt-4">
+      <p class="home-text mt-3">
         Welcome to Happy Hour LV, your go-to guide for discovering the best
         happy hour spots in Las Vegas! 🍹 Whether you're a local looking for new
         places or a visitor seeking the hottest deals, we've got you covered.
@@ -17,9 +17,9 @@
         enthusiasts. Cheers! 🥂 #HappyHourLV
       </p>
       <% if (currentUser) { %>
-      <a href="/bars" class="home-text explore mt-2 d-block mx-auto"
-        >EXPLORE BARS</a
-      >
+      <p class="text-center home-text">
+        <a href="/bars" class="fs-5">EXPLORE BARS</a>
+      </p>
       <% } else { %>
       <p class="home-text mt-4">
         <a href="/sessions/new">Sign In</a> or
@@ -27,46 +27,47 @@
         hour spot!
       </p>
       <% } %> <% if (bars.length > 0) { %>
-      <div
-        id="barImageCarousel"
-        class="carousel slide mx-auto mt-4 rounded shadow"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <% bars.forEach((bar, index) => { %> <% const isActive = index === 0 ?
-          'active' : '' %>
-          <div class="carousel-item <%= isActive %>">
-            <img
-              src="<%= bar.img %>"
-              class="d-block w-100 rounded"
-              alt="<%= bar.name %>"
-            />
+        <div
+          id="barImageCarousel"
+          class="carousel slide mx-auto mt-3 mb-4 rounded shadow"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <% bars.forEach((bar, index) => { %> <% const isActive = index === 0 ?
+            'active' : '' %>
+            <% if (bar.img) { %>
+              <div class="carousel-item <%= isActive %>">
+                <img
+                  src="<%= bar.img %>"
+                  class="d-block w-100 rounded"
+                  alt="<%= bar.name %>"
+                />
+              </div>
+            <% } %>
+            <% }) %>
           </div>
-          <% }) %>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#barImageCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#barImageCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#barImageCarousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#barImageCarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <% } else { %>
-      <p>No Bars Listed</p>
+        <% } else { %>
+        <p>No Bars Listed</p>
       <% } %>
-    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -3,7 +3,7 @@
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="container">
-    <h2>Bars</h2>
+    <h2 class="home-text mt-2 mb-2">BARS</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% for(let i = 0; i < bars.length; i++) { %>
       <div class="col">
@@ -15,6 +15,7 @@
           />
           <div class="card-body">
             <h5 class="card-title"><%= bars[i].name %></h5>
+            <p><%=bars[i].description%></p>
             <a href="/bars/<%= bars[i].id %>" class="btn btn-warning btn-sm mb-2" role="button"
               >Click Here For More Details</a
             ><br>

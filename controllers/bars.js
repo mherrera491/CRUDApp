@@ -23,8 +23,9 @@ const isAuthenticated = (req, res, next) => {
 //     }
 //   });
 // });
+
 // INDEX
-bars.get("", (req, res) => {
+bars.get("", isAuthenticated, (req, res) => {
   Bar.find({}, (error, allBars) => {
     res.render("index.ejs", {
       bars: allBars,
