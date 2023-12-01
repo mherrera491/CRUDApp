@@ -21,6 +21,8 @@ A go-to guide for discovering the best happy hour spots in Las Vegas. Happy Hour
 * Mongoose
 * Express
 * EJS
+* JavaScript
+* CSS
 * BootStrap
 
 ## Whiteboard Images
@@ -28,7 +30,7 @@ A go-to guide for discovering the best happy hour spots in Las Vegas. Happy Hour
 <img src="./assets/images/project2_index page.png" alt="Original Wireframe"/>
 
 ## <a name="design"></a>Design
-* Design elements implemented using EJS and CSS. 
+* Design elements implemented using EJS and BootStrap/CSS. 
 
 ## <a name="functionality"></a>Functionality
 * Can create own login
