@@ -13,11 +13,10 @@ const userController = require("./controllers/users.js");
 const sessionsController = require("./controllers/sessions.js");
 
 // ENV VARIABLES
-const mongoUrl = process.env.MONGOURI
 const PORT = process.env.PORT || 3000;
 
 // DATABASE CONNECTION
-mongoose.connect(mongoUrl + 'happyhourlv');
+mongoose.connect('mongodb://127.0.0.1:27017/happyhourlv');
 mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
