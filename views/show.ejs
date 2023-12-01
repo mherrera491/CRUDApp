@@ -3,7 +3,7 @@
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="container text-center">
-      <h2><%=bar.name%></h2>
+      <h2 class="bar-name"><%=bar.name%></h2>
       <img
         class="img-fluid bar-image"
         src="<%=bar.img%>"
@@ -21,6 +21,12 @@
           <strong>Description:</strong><br />
           <%=bar.description%>
         </p>
+        <a href="/bars/<%= bar.id %>/edit" class="btn btn-warning btn-sm mb-2" role="button"
+          >Edit Details</a
+        >
+        <form action="/bars/<%= bar.id %>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete" class="btn btn-danger" type="button"/>
+        </form>
       </div>
     </div>
   </body>

@@ -1,9 +1,34 @@
 body {
-  background-color: rgb(172, 156, 145);
+  background-color: rgb(48, 47, 47);
+}
+
+.custom-navbar {
+  background-color: #ffc107;
+}
+
+.navbar-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar-nav a:hover {
+  color: white;
+  transition: color 0.3s ease;
 }
 
 .card {
   height: 100%;
+}
+
+.bar-box {
+  background-color: rgb(58, 58, 58);
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.card-body {
+  color: white;
+  text-align: center;
 }
 
 .card-img-top {
@@ -17,13 +42,18 @@ body {
 
 #app-title {
   text-align: center;
+  color: white;
+}
+
+.bar-name{
+  color: white;
 }
 
 .bar-image {
   max-width: 800px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
 }
 
@@ -34,7 +64,17 @@ body {
 }
 
 .bar-info {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     margin-bottom: 20px;
     max-width: 800px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+.sign-in-text {
+  color: white;
+}
+
+.new-loc-text {
+  color: white;
 }

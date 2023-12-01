@@ -1,16 +1,18 @@
 <%- include('../partials/nav.ejs') %>
 <body>
+  <div class="container mt-5 sign-in-text">
     <h1>Sign In</h1>
     <form action="/sessions" method="POST">
-      <fieldset>
-        <label for="username">Username:</label>
-        <input type="text" name="username">
-      </fieldset>
-      <fieldset>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </fieldset>
-      <input type="submit" value="Sign In">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" name="username" class="form-control-sm">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" name="password" class="form-control-sm">
+      </div>
+      <button type="submit" class="btn btn-danger">Sign In</button>
     </form>
+  </div>
 </body>
 </html>

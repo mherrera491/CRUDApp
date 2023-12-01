@@ -39,17 +39,31 @@ bars.delete("/:id", isAuthenticated, (req, res) => {
 
 // UPDATE
 bars.put("/:id", isAuthenticated, (req, res) => {
+  console.log("Form Data:", req.body)
   if (req.body.hasHappyHour === "on") {
     req.body.hasHappyHour = true;
   } else {
     req.body.hasHappyHour = false;
   }
+
+  const updateData = {
+    name: req.body.name,
+    address.street: req.body.street,
+    address.city: req.body.city,
+    address.state: req.body.state,
+    address.zipCode: req.body.zipCode,
+    hasHappyHour: req.body.hasHappyHour,
+    happyHourTime: req.body.happyHourTime,
+    description: req.body.description,
+    img: req.body.img,
+  };
+
   Bar.findByIdAndUpdate(
     req.params.id,
-    req.body,
+    updateData,
     { new: true },
     (err, updatedBar) => {
-      res.redirect("/bars");
+      res.redirect("/bars/");
     }
   );
 });

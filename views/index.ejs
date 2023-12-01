@@ -7,7 +7,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% for(let i = 0; i < bars.length; i++) { %>
       <div class="col">
-        <div class="card mb-4 d-flex flex-column">
+        <div class="card mb-4 d-flex flex-column bar-box">
           <img
             src="<%= bars[i].img %>"
             class="card-img-top img-fluid"
@@ -15,15 +15,9 @@
           />
           <div class="card-body">
             <h5 class="card-title"><%= bars[i].name %></h5>
-            <a href="/bars/<%= bars[i].id %>" class="btn btn-default" role="button"
-              >More Details</a
+            <a href="/bars/<%= bars[i].id %>" class="btn btn-warning btn-sm mb-2" role="button"
+              >Click Here For More Details</a
             ><br>
-            <a href="/bars/<%= bars[i].id %>/edit" class="btn btn-default" role="button"
-              >Edit</a
-            >
-            <form action="/bars/<%= bars[i].id %>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete" class="btn btn-danger" type="button"/>
-            </form>
           </div>
         </div>
       </div>

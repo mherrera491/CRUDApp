@@ -15,22 +15,22 @@
   <body>
     <header>
       <h1 id="app-title">Happy Hour LV</h1>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav d-flex align-items-center">
             <li class="list-inline-item"><a href="/bars">BARS</a></li>
             <li class="list-inline-item">
               <a href="/bars/new">ADD NEW LOCATION</a>
             </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto d-flex align-items-center">
             <% if (currentUser) { %>
             <li class="list-inline-item">
               WELOME <%= currentUser.username.toUpperCase() %>
             </li>
             <li class="list-inline-item">
               <form action="/sessions?_method=DELETE" method="POST">
-                <input type="submit" value="Log Out" class="btn-sm" />
+                <input type="submit" value="Log Out" class="btn btn-danger" />
               </form>
             </li>
             <% } else { %>
