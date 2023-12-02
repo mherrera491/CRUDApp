@@ -1,8 +1,5 @@
 # Happy Hour LV
 
-#### A browser-based memory game created as my first project.
-<img src="./assets/images/memorygame-home.png" alt="Home Page"/>
-
 ## Description
 A go-to guide for discovering the best happy hour spots in Las Vegas. Happy Hour LV is a community-driven platform where you can contribute your favorite happy hour locations, hidden gems, and must-try drink specials with other users. The web application utlizes Node.js, Mongoose, Express, and EJS.
 
